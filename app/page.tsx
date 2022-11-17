@@ -1,9 +1,15 @@
 import { demos } from '#/lib/demos';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+
+const DynamicFabric = dynamic(() => import('./dynamic-fabric'), {
+  ssr: false,
+});
 
 export default function Page() {
   return (
     <div className="space-y-8">
+      <DynamicFabric />
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
 
       <div className="space-y-10 text-white">
